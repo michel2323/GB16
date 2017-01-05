@@ -254,7 +254,6 @@ end module usr
     real(DP) :: total_force
     real(DP), save :: dt_old = 0._dp, bd_old = 0._dp
 
-    if (param(69) < 1 .and. istep == 0) call outpost(vx,vy,vz,pr,t,'   ')
     ifxyo = .false.
     if (istep >= 1 .and. (abs(bd(1)-bd_old) + abs(dt - dt_old) > 1.e-9)) then
        call get_base_flow()
