@@ -20,10 +20,13 @@ with open(argv[1], "r") as f:
 with open(argv[2], "r") as f:
     tusr = f.read()
 
-base["prefix"] = 'swp' 
+base["prefix"] = 'gb' 
+
+job_sizes=[1,2,4,8,16,32,64,128,256,512,1024,2048,3072]
 
 # Take simple outer product of contents of sweep file
-candidates = [{"nodes" : 2**x} for x in range(3)]
+#candidates = [{"nodes" : 2**x} for x in range(6)]
+candidates = [{"nodes" : x} for x in job_sizes]
 
 # Filter out the cases we don't want
 overrides = []
